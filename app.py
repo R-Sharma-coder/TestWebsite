@@ -1,7 +1,7 @@
 import http.server
 from http.server import BaseHTTPRequestHandler
 
-PORT = 8008
+# PORT = 8008
 
 
 class SimpleHTTPRequestHandler2(BaseHTTPRequestHandler):
@@ -43,12 +43,12 @@ class SimpleHTTPRequestHandler2(BaseHTTPRequestHandler):
 
 Handler = SimpleHTTPRequestHandler2
 #
-# with socketserver.TCPServer(("", PORT), Handler) as httpd:
+# with socketserver.TCPServer("https://r-sharma-coder.github.io/TestWebsite/", Handler) as httpd:
 #     print("serving at port", PORT)
 #     httpd.serve_forever()
 BIND_HOST = "localhost"
 # BIND_HOST = "127.0.0.1"
-with http.server.HTTPServer((BIND_HOST, PORT), SimpleHTTPRequestHandler2) as httpd:
+with http.server.HTTPServer("https://r-sharma-coder.github.io/TestWebsite/",SimpleHTTPRequestHandler2) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
 
